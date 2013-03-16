@@ -1,4 +1,3 @@
-DataMiningAlg
-=============
-
-Some data mining algorithms .
+Algorithm
+==============
+Some Algorithm implement.
