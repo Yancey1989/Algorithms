@@ -5,15 +5,15 @@ class Item:
     def __init__(self, iid):
         # item id
         self.iid = iid 
-        # store user->ratting
+        # store user->rating
         self.user = {}
         self.sum = 0.0
 
 class Message:
-    def __init__(self, user, iid, ratting):
+    def __init__(self, user, iid, rating):
         self.user = user
         self.iid = iid
-        self.ratting = ratting
+        self.rating = rating
 
 
 class Algorithm:
@@ -45,29 +45,29 @@ class Algorithm:
     def read_message(self, message):
         user = message.user
         iid = message.iid
-        ratting = message.ratting
+        rating = message.rating
         # update iid info
         if self.items.has_key(iid):
             if self.items[iid].user.has_key(user):
-                if self.items[iid].user[user] < ratting:
+                if self.items[iid].user[user] < rating:
                     # update sum
                     self.items[iid].sum = self.items[iid].sum - \
-                        self.items[iid].user[user] ** 2 + ratting ** 2
-                    self.items[iid].user[user] = ratting
+                        self.items[iid].user[user] ** 2 + rating ** 2
+                    self.items[iid].user[user] = rating
             else:
-                self.items[iid].sum = ratting ** 2
-                self.items[iid].user.update({user:ratting})
+                self.items[iid].sum = rating ** 2
+                self.items[iid].user.update({user:rating})
         else:
             item = Item(iid)
-            item.sum = ratting ** 2
-            item.user.update({user:ratting})
+            item.sum = rating ** 2
+            item.user.update({user:rating})
             self.items.update({iid:item})
 
     def output(self):
         for iid in self.items.keys():
            print 'iid: %s' % iid
            for gid in self.items[iid].user:
-                print '\tuser: %s, ratting: %s' % (gid, self.items[iid].user[gid])
+                print '\tuser: %s, rating: %s' % (gid, self.items[iid].user[gid])
 
 if __name__ == '__main__':
     alg = Algorithm()
