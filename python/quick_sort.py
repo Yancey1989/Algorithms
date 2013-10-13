@@ -12,7 +12,7 @@ def partitation(data, p, r):
     j = p
     while j < r:
         if data[j] < x:
-            i += 1 
+            i += 1
             data[i], data[j] = data[j], data[i]
         j += 1
     data[i+1], data[r] =data[r], data[i+1]
