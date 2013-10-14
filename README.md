@@ -6,4 +6,6 @@ Some Algorithm implement.
  
 2. 2013-05-06 Add quick sort algorithms implement.
 
-3. 2013-06-29 Add min edit distance impolement.
+3. 2013-06-29 Add min edit distance implement.
+
+4. 2013-10-13 Add Consumer Producer Mode implement.
